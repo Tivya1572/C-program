@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+    int in_h,in_m,out_h,out_m,in_time,out_time;
+    char vehicle_type;
+    printf("enter the vehicle type:");
+    scanf("%c",&vehicle_type);
+    printf("enter a in_time:");
+    scanf("%d:%d",&in_h,&in_m);
+    printf("enter a out_time:");
+    scanf("%d:%d",&out_h,&out_m);
+    in_time=out_h-in_h;
+    out_time=out_m-in_m;
+    printf("Parking time is:%d:%d\n",in_time,out_time);
+    if(vehicle_type=='T')
+        if(out_m==in_m+10)
+            printf("Parking charges is:20");
+        else
+            printf("parking charges is:%d",20+10);
+    if(vehicle_type=='F')
+        if(out_m==in_m+10)
+            printf("Parking charges is:40");
+        else
+            printf("parking charges is:%d",40+10);
+
+}
