@@ -1,0 +1,33 @@
+Given a String with numbers and operators. Perform the operation on the numbers in their respective order. Operator precedence need not be considered. The input string will have the numbers followed by the operators. 
+Input: "12345 * + - + " 	
+Result: 6 [Explanation: 1 * 2 + 3 - 4 + 5 = 6]
+Input: "374291 - - * + -" 	
+Result: -8 [Explanation: 3 - 7 - 4 * 2 + 9 - 1 = -8]
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char sen[100];
+	scanf("%[^\n]s",sen);
+	int length=0;
+	while(sen[length]!='\0')
+	length++;
+	int i,j;
+	char oper[100];
+	for(i=0;i<length;i++)
+		if(sen[i]>=48 && sen[i]<=57)
+		break;
+	else
+	for(j=0;j<length;j++)
+		oper[j]=sen[i];
+	int iter,o,ans=sen[0]-48;
+	for(iter=1,o=0;iter<length;iter++,o++)
+	{
+		if(oper[o]=='+') ans+=sen[iter]-48;
+		if(oper[o]=='-') ans-=sen[iter]-48;
+		if(oper[o]=='*') ans*=sen[iter]-48;
+		if(oper[o]=='/') ans/=sen[iter]-48;
+	}
+	printf("%d",ans);
+}
