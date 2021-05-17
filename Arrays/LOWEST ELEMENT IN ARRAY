@@ -1,0 +1,23 @@
+#include <stdio.h>
+int findkey(int arr[],int len)
+{
+    int i,j,min=arr[0];
+    for(i=1;i<len;i++)
+    {
+                    for(j=i;j<len;j++)
+                    {
+                      if(arr[j]<min)
+                        min=arr[j];  
+                    }
+    }
+    printf("%d\n",min);
+    return 0;
+}
+int main()
+{
+    int arr[] = {1,2,3,4,5,2,4,3};
+    int len;
+    len = sizeof(arr)/sizeof(arr[0]);
+    findkey(arr,len);
+    
+}
