@@ -1,0 +1,30 @@
+#include <stdio.h>
+int findelementadd(int arr[],int pos,int size,int addelem)
+{
+    int i,j,temp=0;
+    size=size+1;
+	for(i=size;i>=pos;i--)
+    {
+			arr[i]=arr[i-1];
+	}
+	arr[pos-1]=addelem;
+	for(i=0;i<size;i++)
+	printf("%d",arr[i]);
+    		
+	}
+
+int main()
+{
+    int arr[7],pos,i,size,addelem;
+    printf("enter size:");
+    scanf("%d",&size);
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("enter the position to add:");
+    scanf("%d",&pos);
+    printf("enter the element to add:");
+    scanf("%d",&addelem);
+    findelementadd(arr,pos,size,addelem);
+}
