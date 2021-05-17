@@ -1,0 +1,38 @@
+//Given an array arr[] and size of array is n and one another key x, and give you a segment size k. The task is to find that the key x present in every segment of size k in arr[].
+#include <stdio.h>
+int findkey(int arr[],int len,int x,int k)
+{
+    int i,j;
+    for(i=0;i<len;i=i+k)
+    {
+        for(j=0;j<k;j++)
+        {
+            if(i + j < len && arr[i + j] == x)
+                break;
+     
+                    if (j == k)
+                        return 0;
+                    if (i + j >= len)
+                        return 0;
+            
+            }
+        }
+        if (i >= len)
+            return 1;
+        else
+            return 0;
+}
+int main()
+{
+    int arr[] = { 21, 23, 56, 65, 34, 54, 76, 32, 23, 45, 21, 23, 25}   ;
+    int x,k,len;
+    printf("enter a x value:");
+    scanf("%d",&x);
+    printf("enter a key value:");
+    scanf("%d",&k);
+    len = sizeof(arr)/sizeof(arr[0]);
+    if(findkey(arr,len,x,k)==1)
+    printf("yes");
+    else
+    printf("no");
+}
