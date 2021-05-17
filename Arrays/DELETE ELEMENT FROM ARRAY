@@ -1,23 +1,19 @@
-#include <stdio.h>
 int findelementdelete(int arr[],int pos,int size)
 {
     int i,j;
-    for(i=0;i<pos;i++)
+    for(i=pos;i<size;i++)
+    {
+           arr[i]=arr[i+1]; 
+	}
+    for(i=0;i<size-1;i++)
     {
     	printf("%d",arr[i]);
 	}
-    
-    for(i=pos;i<=size;i++)
-    {
-           arr[i]=arr[i+1];
-           size=size-1;
-     printf("%d",arr[i]); 
-	}
-
 }
 int main()
 {
-    int arr[7],pos,i,size;
+    int size,pos,i;
+    int arr[size];
     printf("enter size:");
     scanf("%d",&size);
     for(i=0;i<size;i++)
