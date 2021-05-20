@@ -1,0 +1,30 @@
+#include<stdio.h>
+int largestandsmallest(int arr[],int k,int n)
+{
+    int i,j,temp=0;
+    for(i=0;i<=n-1;i++)
+    {
+        for(j=0;j<n-i-1;j++)
+        {
+           if(arr[j]>arr[j+1])
+           {
+               temp=arr[j+1];
+               arr[j+1]=arr[j];
+               arr[j]=temp;
+           }
+        }
+    }
+    
+}
+int main()
+{
+    int arr[]={7, 10, 4, 3, 20, 15};
+    int k,n;
+    n=sizeof (arr)/sizeof (arr[0]);
+    printf("%d",n);
+    printf("enter k value:");
+    scanf("%d",&k);
+    largestandsmallest(arr,k,n);
+     printf("%d ",arr[k-1]);
+        
+}
